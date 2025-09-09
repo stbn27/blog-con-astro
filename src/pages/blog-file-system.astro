@@ -1,9 +1,9 @@
 ---
-import TypeBlogPost from "@components/TypeBlogPost.astro";
 import MainLayout from "@layout/MainLayout.astro";
-import { getCollection } from "astro:content";
+import CardPost from "src/components/CardPost.astro";
 
-const blogsPost = await getCollection("blog");
+const posts = await Astro.glob("./posts-old/*{.md, .mdx}");
+console.log(posts);
 ---
 
 <MainLayout title="STBN | Mi Blog">
@@ -18,7 +18,7 @@ const blogsPost = await getCollection("blog");
 			<div
 				class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3"
 			>
-				{blogsPost.map((post) => <TypeBlogPost post={post} />)}
+				{posts.map((post) => <CardPost {...post} />)}
 			</div>
 		</div>
 	</section>

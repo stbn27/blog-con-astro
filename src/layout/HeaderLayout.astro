@@ -1,0 +1,107 @@
+---
+const links = [
+    { href: "/", text: "Inicio" },
+    { href: "#", text: "Detalles" },
+    { href: "#", text: "Blog" },
+];
+---
+
+<header
+    class="bg-gray-900 border-b border-gray-700 sticky top-0 z-50 backdrop-blur-sm bg-opacity-95"
+>
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0">
+                <h1 class="text-xl font-bold text-white">Mi Blog</h1>
+            </div>
+
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    {
+                        links.map((link) => (
+                            <a
+                                href={link.href}
+                                class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-gray-700 transform hover:scale-105"
+                            >
+                                {link.text}
+                            </a>
+                        ))
+                    }
+                    }
+                </div>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button
+                    type="button"
+                    class="mobile-menu-button bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 transition-colors duration-200"
+                >
+                    <svg
+                        class="h-6 w-6"
+                        stroke="currentColor"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden mb-4 md:mb-0">
+            <div
+                class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800 rounded-lg mt-2"
+            >
+                {
+                    links.map((link) => (
+                        <a
+                            href={link.href}
+                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        >
+                            {link.text}
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.querySelector(".mobile-menu-button");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        mobileMenuButton?.addEventListener("click", function () {
+            mobileMenu?.classList.toggle("hidden");
+        });
+    });
+</script>
+
+<style>
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background-color: #60a5fa;
+        transition: all 0.3s ease-in-out;
+        transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+</style>
