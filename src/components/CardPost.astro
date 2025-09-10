@@ -12,15 +12,12 @@ const { frontmatter, url } = Astro.props;
     />
 
     <div class="flex flex-col justify-between py-6 lg:mx-6">
-        <a
-            href={url}
-            class="text-sm font-semibold text-gray-800 hover:underline dark:text-white"
-        >
-            {frontmatter.title}
+        <a href={url} class="text-xl font-semibold hover:underline text-white">
+            {frontmatter.description}
         </a>
 
-        <span class="text-sm text-gray-500 dark:text-gray-300"
-            >En: {Formatter.formatDate(frontmatter.date)}</span
+        <span class="text-sm text-gray-300"
+            >{Formatter.formatDate(frontmatter.date)}</span
         >
     </div>
 </div>

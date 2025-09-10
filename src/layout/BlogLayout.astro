@@ -1,11 +1,16 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import HeaderLayout from "./HeaderLayout.astro";
+
 import "../styles/blog.css";
 import "../styles/global.css";
 
-const { title } = Astro.props;
-// const frontmatter = rest.frontmatter || {};
+// interface Props {
+//   title?: string;
+// }
+
+const { title } = Astro.props; //, ...rest
+// const frontmatter = rest.frontmatter;
+// console.log('🚀 ~ frontmatter:', frontmatter);
 ---
 
 <html lang="es">
@@ -14,24 +19,14 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-
         <title>{title}</title>
 
         <ViewTransitions />
     </head>
+    <body class="bg-gray-900">
+        <a href="/" id="btn-back">Regresar</a>
 
-    <body class="bg-slate-900 min-h-screen text-white">
-        <!-- <HeaderLayout /> -->
-        <aside class="px-6 mt-3">
-            <a
-                id="btn-regresar"
-                href="/"
-                class="text-xs decoration-1 underline underline-offset-3 text-gray-300 hover:text-white"
-                >Regresar</a
-            >
-        </aside>
-
-        <main class="container mx-auto px-4 py-8">
+        <main class="mb-10 max-w-5xl m-auto px-2 py-2">
             <slot />
         </main>
     </body>
