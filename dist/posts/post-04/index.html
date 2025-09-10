@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.13.6"><title>Construyendo una API REST con Node.js</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.U4jOVs4w.js"></script><style>/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */html{background-color:var(--color-gray-900,oklch(21% .034 264.665));padding-inline:calc(var(--spacing,.25rem)*10);scroll-behavior:smooth}body{margin-top:calc(var(--spacing,.25rem)*10);font-family:system-ui}h1{margin-block:calc(var(--spacing,.25rem)*5);font-size:var(--text-3xl,1.875rem);line-height:var(--tw-leading,var(--text-3xl--line-height, 1.2 ));color:var(--color-white,#fff)}h2{margin-block:calc(var(--spacing,.25rem)*5);font-size:var(--text-2xl,1.5rem);line-height:var(--tw-leading,var(--text-2xl--line-height,calc(2/1.5)));color:var(--color-blue-500,oklch(62.3% .214 259.815))}h3{margin-block:calc(var(--spacing,.25rem)*5);font-size:var(--text-sm,.875rem);line-height:var(--tw-leading,var(--text-sm--line-height,calc(1.25/.875)));color:var(--color-white,#fff)}p{margin-block:calc(var(--spacing,.25rem)*5);color:var(--color-white,#fff)}a{color:var(--color-blue-500,oklch(62.3% .214 259.815))}@media (hover:hover){a:hover{text-decoration-line:underline}}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.D9hgWW_2.css">
+<style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-cvyjz5sb-1"] { view-transition-name: post-04-image; }@layer astro { ::view-transition-old(post-04-image) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(post-04-image) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(post-04-image) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(post-04-image) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-cvyjz5sb-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-cvyjz5sb-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-cvyjz5sb-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-cvyjz5sb-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-cvyjz5sb-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-cvyjz5sb-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-cvyjz5sb-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-cvyjz5sb-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body class="bg-gray-900"> <a href="/" id="btn-back">Regresar</a> <main class="mb-10 max-w-5xl m-auto px-2 py-2">  <h1 class="text-xs text-gray-500 mb-0">Construyendo una API REST con Node.js</h1>  <div class="text-md text-gray-400 mb-0 flex flex-row mt-2"> <img src="/_astro/bob-williams.CQObwEr6_aCM4h.webp" alt="Bob Williams" loading="lazy" decoding="async" fetchpriority="auto" width="50" height="50" class="rounded-full"> <div class="flex flex-col ml-5"> <a href="/blog/bob-williams">Bob Williams</a> <span class="text-xs text-gray-200"> 19 de junio de 2023 </span> </div> </div>   <img src="/_astro/post-04.C6a-sA3o_ZNstAJ.webp" alt="Construyendo una API REST con Node.js" data-astro-transition-scope="astro-cvyjz5sb-1" loading="lazy" decoding="async" fetchpriority="auto" width="600" height="220" class="object-cover w-full h-[250px] my-5 rounded-md"> <h3>Tabla de contenidos</h3> <ol> <li> <a href="#construyendo-una-api-rest-con-nodejs"> 1 - Construyendo una API REST con Node.js </a> </li><li> <a href="#instalación-de-nodejs"> 2 - Instalación de Node.js </a> </li><li> <a href="#creación-de-rutas-para-la-api"> 3 - Creación de rutas para la API </a> </li><li> <a href="#conclusion"> 4 - Conclusion </a> </li> </ol>  <h1 id="construyendo-una-api-rest-con-nodejs">Construyendo una API REST con Node.js</h1>
+<p>En este tutorial, construiremos una API RESTful utilizando Node.js y Express. Una API RESTful es una interfaz de programación de aplicaciones que sigue los principios de REST (Representational State Transfer). Utilizaremos Express, un marco de aplicaciones web de Node.js, para crear nuestra API.</p>
+<h2 id="instalación-de-nodejs">Instalación de Node.js</h2>
+<p>Primero, necesitas instalar Node.js en tu sistema. Puedes descargar Node.js desde el <a href="https://nodejs.org/">sitio web oficial</a>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> init</span><span style="color:#79B8FF"> -y</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> express</span></span></code></pre>
+<p>Creamos un archivo <code>index.js</code> y agregamos el siguiente código:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> express</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'express'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> app</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> express</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> port</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 3000</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  res.</span><span style="color:#B392F0">send</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Hello World!'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">listen</span><span style="color:#E1E4E8">(port, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Server is running on http://localhost:${</span><span style="color:#E1E4E8">port</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>Para ejecutar la aplicación, ejecuta el siguiente comando:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">node</span><span style="color:#9ECBFF"> index.js</span></span></code></pre>
+<p>Ahora puedes acceder a tu aplicación en <code>http://localhost:3000</code>.</p>
+<h2 id="creación-de-rutas-para-la-api">Creación de rutas para la API</h2>
+<p>Vamos a crear algunas rutas para nuestra API. Por ejemplo, una ruta para obtener una lista de usuarios y otra ruta para obtener un usuario por su ID.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/users'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  res.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">([</span></span>
+<span class="line"><span style="color:#E1E4E8">    { id: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Alice'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { id: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Bob'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/users/:id'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> id</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> req.params.id;</span></span>
+<span class="line"><span style="color:#E1E4E8">  res.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">({ id, name: </span><span style="color:#9ECBFF">'Alice'</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>Ahora puedes acceder a la API de usuarios en <code>http://localhost:3000/api/users</code> y <code>http://localhost:3000/api/users/1</code>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>En este tutorial, hemos construido una API RESTful utilizando Node.js y Express. Puedes agregar más rutas y funcionalidades a tu API según tus necesidades. ¡Diviértete construyendo tu API!</p>
+<p>Espero que este tutorial te haya sido útil. Si tienes alguna pregunta, no dudes en dejar un comentario.</p> <div class="my-20"> <a href="#btn-back">Ir arriba</a> </div>  </main> </body></html>

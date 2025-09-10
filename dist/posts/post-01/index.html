@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.13.6"><title>Explorando Funciones de ES6</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.U4jOVs4w.js"></script><style>/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */html{background-color:var(--color-gray-900,oklch(21% .034 264.665));padding-inline:calc(var(--spacing,.25rem)*10);scroll-behavior:smooth}body{margin-top:calc(var(--spacing,.25rem)*10);font-family:system-ui}h1{margin-block:calc(var(--spacing,.25rem)*5);font-size:var(--text-3xl,1.875rem);line-height:var(--tw-leading,var(--text-3xl--line-height, 1.2 ));color:var(--color-white,#fff)}h2{margin-block:calc(var(--spacing,.25rem)*5);font-size:var(--text-2xl,1.5rem);line-height:var(--tw-leading,var(--text-2xl--line-height,calc(2/1.5)));color:var(--color-blue-500,oklch(62.3% .214 259.815))}h3{margin-block:calc(var(--spacing,.25rem)*5);font-size:var(--text-sm,.875rem);line-height:var(--tw-leading,var(--text-sm--line-height,calc(1.25/.875)));color:var(--color-white,#fff)}p{margin-block:calc(var(--spacing,.25rem)*5);color:var(--color-white,#fff)}a{color:var(--color-blue-500,oklch(62.3% .214 259.815))}@media (hover:hover){a:hover{text-decoration-line:underline}}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.D9hgWW_2.css">
+<style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-cvyjz5sb-1"] { view-transition-name: post-01-image; }@layer astro { ::view-transition-old(post-01-image) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(post-01-image) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(post-01-image) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(post-01-image) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-cvyjz5sb-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-cvyjz5sb-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-cvyjz5sb-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-cvyjz5sb-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-cvyjz5sb-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-cvyjz5sb-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-cvyjz5sb-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-cvyjz5sb-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body class="bg-gray-900"> <a href="/" id="btn-back">Regresar</a> <main class="mb-10 max-w-5xl m-auto px-2 py-2">  <h1 class="text-xs text-gray-500 mb-0">Explorando Funciones de ES6</h1>  <div class="text-md text-gray-400 mb-0 flex flex-row mt-2"> <img src="/_astro/jane-doe.DS2SvtTi_2k2WCG.webp" alt="Jane Doe" loading="lazy" decoding="async" fetchpriority="auto" width="50" height="50" class="rounded-full"> <div class="flex flex-col ml-5"> <a href="/blog/jane-doe">Jane Doe</a> <span class="text-xs text-gray-200"> 31 de mayo de 2023 </span> </div> </div>   <img src="/_astro/post-01.72ELRuPo_2nCENn.webp" alt="Explorando Funciones de ES6" data-astro-transition-scope="astro-cvyjz5sb-1" loading="lazy" decoding="async" fetchpriority="auto" width="600" height="220" class="object-cover w-full h-[250px] my-5 rounded-md"> <h3>Tabla de contenidos</h3> <ol> <li> <a href="#explorando-funciones-de-es6"> 1 - Explorando Funciones de ES6 </a> </li><li> <a href="#arrow-functions---funciones-de-flecha"> 2 - Arrow Functions - Funciones de Flecha </a> </li><li> <a href="#ejemplo"> 3 - Ejemplo </a> </li><li> <a href="#template-literals---literales-de-plantilla"> 4 - Template Literals - Literales de Plantilla </a> </li><li> <a href="#ejemplo-1"> 5 - Ejemplo </a> </li><li> <a href="#destructuring-assignment---asignación-por-desestructuración"> 6 - Destructuring Assignment - Asignación por Desestructuración </a> </li><li> <a href="#ejemplo-2"> 7 - Ejemplo </a> </li> </ol>  <h1 id="explorando-funciones-de-es6">Explorando Funciones de ES6</h1>
+<p>JavaScript ES6 introdujo varias funciones nuevas que han hecho que la codificación en JavaScript sea más eficiente y agradable. Vamos a explorar algunas de estas funciones.</p>
+<h2 id="arrow-functions---funciones-de-flecha">Arrow Functions - Funciones de Flecha</h2>
+<p>Las funciones de flecha proporcionan una nueva sintaxis para escribir expresiones de función. Son más concisas y vinculan léxicamente el valor <code>this</code>.</p>
+<h3 id="ejemplo">Ejemplo</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> add</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">a</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=&gt;</span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> b;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">)); </span><span style="color:#6A737D">// Output: 5</span></span></code></pre>
+<h2 id="template-literals---literales-de-plantilla">Template Literals - Literales de Plantilla</h2>
+<p>Los literales de plantilla permiten una interpolación de cadenas más fácil y cadenas de varias líneas. Utilizan comillas invertidas (`) en lugar de comillas simples o dobles.</p>
+<h3 id="ejemplo-1">Ejemplo</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> name</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &#39;Jane&#39;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Hello, ${</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}!`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">// Output: Hello, Jane!</span></span></code></pre>
+<h2 id="destructuring-assignment---asignación-por-desestructuración">Destructuring Assignment - Asignación por Desestructuración</h2>
+<p>La asignación por desestructuración le permite extraer valores de matrices u objetos y asignarlos a variables de una manera más concisa.</p>
+<h3 id="ejemplo-2">Ejemplo</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> person</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> { name: </span><span style="color:#9ECBFF">&#39;Jane&#39;</span><span style="color:#E1E4E8">, age: </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8"> };</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">name</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">age</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> person;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(name, age); </span><span style="color:#6A737D">// Output: Jane 30</span></span></code></pre> <div class="my-20"> <a href="#btn-back">Ir arriba</a> </div>  </main> </body></html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html><meta charset="utf-8"/><h1 id="explorando-funciones-de-es6">Explorando Funciones de ES6!!!</h1>
+
+<img src="/assets/images/post-01.png" width="350" alt="Explorando Funciones de ES6"/>
+<p>JavaScript ES6 introdujo varias funciones nuevas que han hecho que la codificación en JavaScript sea más eficiente y agradable. Vamos a explorar algunas de estas funciones.</p>
+<h2 id="arrow-functions---funciones-de-flecha">Arrow Functions - Funciones de Flecha</h2>
+<p>Las funciones de flecha proporcionan una nueva sintaxis para escribir expresiones de función. Son más concisas y vinculan léxicamente el valor <code>this</code>.</p>
+<h3 id="ejemplo">Ejemplo</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> add</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">a</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=&gt;</span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> b;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">)); </span><span style="color:#6A737D">// Output: 5</span></span></code></pre>
+<h2 id="template-literals---literales-de-plantilla">Template Literals - Literales de Plantilla</h2>
+<p>Los literales de plantilla permiten una interpolación de cadenas más fácil y cadenas de varias líneas. Utilizan comillas invertidas (`) en lugar de comillas simples o dobles.</p>
+<h3 id="ejemplo-1">Ejemplo</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> name</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &#39;Jane&#39;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Hello, ${</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}!`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">// Output: Hello, Jane!</span></span></code></pre>
+<h2 id="destructuring-assignment---asignación-por-desestructuración">Destructuring Assignment - Asignación por Desestructuración</h2>
+<p>La asignación por desestructuración le permite extraer valores de matrices u objetos y asignarlos a variables de una manera más concisa.</p>
+<h3 id="ejemplo-2">Ejemplo</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> person</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> { name: </span><span style="color:#9ECBFF">&#39;Jane&#39;</span><span style="color:#E1E4E8">, age: </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8"> };</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">name</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">age</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> person;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(name, age); </span><span style="color:#6A737D">// Output: Jane 30</span></span></code></pre>

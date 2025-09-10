@@ -1,23 +1,30 @@
 ---
 import MainLayout from "@layout/MainLayout.astro";
-import { siteConfig } from "../config/site-config";
 import TypeBlogPost from "@components/TypeBlogPost.astro";
-
-const posts = await Astro.glob("./posts-old/*.{md,mdx}");
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog");
 ---
 
-<MainLayout title="Fernando's Blog">
-	<!-- component -->
-	<section class="bg-white dark:bg-gray-900">
+<MainLayout title="STBN || BLOG">
+	<section class="bg-gray-900">
 		<div class="container px-6 py-10 mx-auto">
-			<h1
-				class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white"
-			>
-				{siteConfig.title}
-			</h1>
+			<div class="text-center">
+				<h1
+					class="text-2xl font-semibold capitalize lg:text-3xl text-white"
+				>
+					Desde el Blog
+				</h1>
 
-			<div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
-				{posts.map((post) => <TypeBlogPost {...post} />)}
+				<p class="max-w-lg mx-auto mt-4 text-gray-400">
+					Explora nuestro blog para descubrir las últimas noticias,
+					tutoriales y artículos sobre una amplia gama de temas.
+				</p>
+			</div>
+
+			<div
+				class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3"
+			>
+				{posts.map((post) => <TypeBlogPost post={post} />)}
 			</div>
 		</div>
 	</section>
